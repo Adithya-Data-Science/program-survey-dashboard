@@ -1,0 +1,8 @@
+program_id,department,partnership_type,impact_area,satisfaction,funding,student_volunteers
+P001,Business,Nonprofit,Economic Mobility,4.4,12000,18
+P002,Computing,School,Education,4.7,9000,25
+P003,Public Affairs,Government,Civic Engagement,4.2,15000,12
+P004,Arts,Nonprofit,Education,4.5,6000,20
+P005,Health,Community Group,Wellbeing,4.6,11000,30
+P006,Business,Government,Economic Mobility,4.1,8000,15
+
