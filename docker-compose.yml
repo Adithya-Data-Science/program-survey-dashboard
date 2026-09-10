@@ -1,0 +1,27 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg://app:app@db:5432/programs
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: programs
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d programs"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - program_db:/var/lib/postgresql/data
+
+volumes:
+  program_db:
